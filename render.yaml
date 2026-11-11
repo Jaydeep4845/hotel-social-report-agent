@@ -1,0 +1,20 @@
+# Render blueprint - free web service, redeploys on every push to main.
+services:
+  - type: web
+    name: hotel-social-report-agent
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/status
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: LLM_MODE
+        value: auto
+      - key: LLM_MODEL
+        value: claude-opus-5-5
+      - key: LLM_MAX_REPORTS_PER_HOUR
+        value: "20"
+      - key: ANTHROPIC_API_KEY
+        sync: false   # set in the Render dashboard, never in git

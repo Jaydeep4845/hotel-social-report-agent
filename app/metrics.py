@@ -20,7 +20,7 @@ def to_frame(posts):
         return df
     df["date"] = pd.to_datetime(df["date"])
     df["month"] = df["date"].dt.strftime("%Y-%m")
-    df["weekday"] = df["date"].dt.dayofweek.map(lambda i: WEEKDAYS[i])
+    df["weekday"] = df["date"].dt.day_of_week.map(lambda i: WEEKDAYS[i])
     df["engagements"] = df[["likes", "comments", "shares", "saves"]].sum(axis=1)
     return df
 
