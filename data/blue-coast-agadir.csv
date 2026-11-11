@@ -1,5 +1,5 @@
 post_id,date,platform,format,topic,impressions,reach,likes,comments,shares,saves,link_clicks
-BC-0008,2026-09-01,facebook,photo,beach_pool,2796,2157,70,6,9,15,19
+BC-0008,2026-09-01,instagram,reel,beach_pool,4516,3484,184,16,24,39,31
 BC-0013,2026-09-02,tiktok,video,dining,7959,6605,346,30,45,74,52
 BC-0023,2026-09-02,facebook,photo,events,4218,2638,53,5,7,11,23
 BC-0020,2026-09-03,instagram,photo,family,6725,5381,148,13,19,32,54
@@ -37,7 +37,7 @@ BC-0034,2026-10-13,instagram,carousel,dining,5598,3898,117,10,15,25,30
 BC-0042,2026-10-13,facebook,carousel,rooms,2898,1935,44,4,6,10,9
 BC-0049,2026-10-13,facebook,video,beach_pool,4395,2787,86,7,11,18,16
 BC-0039,2026-10-14,facebook,photo,dining,2493,1692,29,2,4,6,11
-BC-0053,2026-10-14,tiktok,video,beach_pool,6948,5367,314,27,40,67,31
+BC-0053,2026-10-14,facebook,video,beach_pool,3474,2684,78,7,10,17,16
 BC-0030,2026-10-15,facebook,video,dining,5399,3493,86,7,11,18,19
 BC-0032,2026-10-15,facebook,video,rooms,3373,2539,47,4,6,10,13
 BC-0041,2026-10-18,instagram,photo,rooms,5863,3804,96,8,12,21,18
@@ -45,11 +45,11 @@ BC-0040,2026-10-19,instagram,photo,rooms,5140,3708,73,6,9,16,20
 BC-0045,2026-10-19,instagram,reel,beach_pool,6492,5071,190,16,24,41,37
 BC-0043,2026-10-20,facebook,video,dining,3759,2596,59,5,8,13,18
 BC-0050,2026-10-20,instagram,reel,events,6309,5024,125,11,16,27,40
-BC-0037,2026-10-22,tiktok,video,beach_pool,7259,4686,290,25,37,62,29
+BC-0037,2026-10-22,facebook,photo,beach_pool,3630,2343,58,5,7,12,14
 BC-0054,2026-10-22,instagram,carousel,rooms,4756,3011,88,8,11,19,23
 BC-0033,2026-10-23,instagram,photo,dining,7031,5061,99,8,13,21,40
 BC-0038,2026-10-23,instagram,reel,beach_pool,4949,3606,133,11,17,28,19
-BC-0052,2026-10-23,tiktok,video,family,6779,5468,246,21,32,53,34
+BC-0052,2026-10-23,facebook,video,family,3389,2734,62,5,8,13,17
 BC-0044,2026-10-24,facebook,carousel,dining,5656,4273,114,10,15,24,26
 BC-0031,2026-10-26,facebook,video,family,6428,4391,104,9,13,22,34
 BC-0056,2026-10-27,facebook,video,dining,5235,3285,67,6,9,14,27

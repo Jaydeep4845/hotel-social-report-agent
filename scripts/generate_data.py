@@ -45,7 +45,7 @@ PROFILES = {
         "topics": {"local_culture": 1.35, "food": 1.15, "rooms": 0.9, "pool": 1.0, "spa": 0.95},
         "best_weekday": 4,  # Friday
         "month_reach": {9: 1.0, 10: 1.18},
-        "month_er": {9: 1.0, 10: 1.06},
+        "month_er": {9: 1.0, 10: 1.22},
         "click_rate": 0.008,
         "month_clicks": {9: 1.0, 10: 1.1},
     },
@@ -54,7 +54,7 @@ PROFILES = {
         "city": "Agadir",
         "prefix": "BC",
         "posts_per_month": 28,
-        "platform_weights": {"instagram": 0.50, "facebook": 0.42, "tiktok": 0.08},
+        "platform_weights": {"instagram": 0.52, "facebook": 0.43, "tiktok": 0.05},
         "format_er": {"reel": 0.055, "photo": 0.040, "carousel": 0.058, "video": 0.050},
         "platform_er": {"instagram": 1.0, "facebook": 0.85, "tiktok": 1.7},
         "topics": {"beach_pool": 1.35, "dining": 1.0, "rooms": 0.85, "events": 0.9, "family": 1.05},
