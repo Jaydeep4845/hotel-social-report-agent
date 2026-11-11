@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Social Report Agent</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232a78d6'/><path d='M9 22V10h3v5h8v-5h3v12h-3v-4h-8v4z' fill='white'/></svg>">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">H</span>
+      <div>
+        <h1>Hotel Social Report Agent</h1>
+        <p class="muted">Import metrics &rarr; evidence-based report &rarr; human approval &rarr; export</p>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="pill" id="llm-status">checking…</span>
+      <span class="pill pill-warn">Synthetic data only</span>
+    </div>
+  </header>
+
+  <nav class="client-tabs" id="client-tabs" aria-label="Clients"></nav>
+
+  <main class="layout">
+    <section class="col-main">
+      <div class="card">
+        <div class="card-head">
+          <h2 id="period-title">Overview</h2>
+          <span class="muted" id="period-sub"></span>
+        </div>
+        <div class="kpis" id="kpis"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Engagement rate breakdown</h2><span class="muted">current month, reach-weighted</span></div>
+        <div class="charts">
+          <div><h3>By platform</h3><div class="bars" id="chart-platform"></div></div>
+          <div><h3>By format</h3><div class="bars" id="chart-format"></div></div>
+        </div>
+      </div>
+
+      <div class="card" id="report-card">
+        <div class="card-head">
+          <h2>Monthly report</h2>
+          <button class="btn btn-primary" id="btn-generate">Generate report</button>
+        </div>
+        <div id="report-empty" class="empty">
+          No report open. Click <b>Generate report</b> to create a draft from this client's data,
+          or open one from the history.
+        </div>
+        <div id="report" hidden>
+          <div class="report-meta">
+            <span class="badge" id="r-status"></span>
+            <span class="muted" id="r-meta"></span>
+          </div>
+
+          <label class="label" for="r-summary">Summary</label>
+          <textarea id="r-summary" rows="4"></textarea>
+
+          <h3 class="section-title">Insights <span class="muted" id="r-insight-note"></span></h3>
+          <div id="r-insights"></div>
+
+          <div class="review" id="review-box">
+            <h3>Human review</h3>
+            <p class="muted">Edit the summary or untick insights before approving. Nothing can be exported until a person approves it.</p>
+            <div class="review-row">
+              <input id="reviewer" placeholder="Your name" maxlength="60">
+              <input id="review-note" placeholder="Note (required to reject)" maxlength="500">
+            </div>
+            <div class="review-row">
+              <button class="btn btn-good" id="btn-approve">Approve</button>
+              <button class="btn btn-bad" id="btn-reject">Reject</button>
+            </div>
+          </div>
+
+          <div class="export">
+            <h3>Export</h3>
+            <div class="review-row">
+              <a class="btn" data-fmt="md">Markdown</a>
+              <a class="btn" data-fmt="csv">CSV</a>
+              <a class="btn" data-fmt="json">JSON</a>
+            </div>
+            <p class="muted" id="export-hint">Available after approval.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="col-side">
+      <div class="card">
+        <div class="card-head"><h2>Data</h2></div>
+        <p id="data-info" class="muted"></p>
+        <label class="btn upload">
+          Import CSV
+          <input type="file" id="file" accept=".csv,text/csv" hidden>
+        </label>
+        <a class="link" href="/api/sample.csv">Download sample format</a>
+        <p class="muted small">Rows are always stored under the selected client. Re-importing a post_id updates it.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Report history</h2></div>
+        <ul class="history" id="history"></ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Audit trail</h2></div>
+        <ul class="audit" id="audit"><li class="muted">Open a report to see its history.</li></ul>
+      </div>
+
+      <div class="card small">
+        <a class="link" href="/docs" target="_blank">API docs (OpenAPI)</a>
+        <button class="btn btn-ghost" id="btn-reset">Reset demo data</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
