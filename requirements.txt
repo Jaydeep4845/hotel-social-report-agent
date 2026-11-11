@@ -1,0 +1,11 @@
+fastapi==0.162.4
+uvicorn[standard]==0.54.0
+pandas==3.1.1
+jinja2==3.1.6
+python-multipart==0.0.33
+python-dotenv==1.2.4
+anthropic==2.8.0
+
+# dev / tests
+pytest==9.2.0
+httpx==0.28.1
